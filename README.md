@@ -61,8 +61,22 @@ emailctl login
 
 The login URL is always printed to the terminal, so it works everywhere:
 
-- **Desktop** — browser opens automatically
-- **SSH / VM / headless** — copy the URL from the terminal, open it in any browser on your local machine, and complete the Google sign-in. The callback hits `localhost:9876` which resolves back to the CLI.
+- **Desktop** — browser opens automatically, callback completes the login
+- **SSH / VM / headless** — copy the URL from the terminal, open it in any browser on your local machine, sign in with Google. Your browser will redirect to `localhost:9876/callback?code=...` — copy that full URL from the address bar and paste it back into the terminal where emailctl is waiting.
+
+```
+🔐 Login to emailctl
+
+Open this URL in any browser:
+
+  https://accounts.google.com/o/oauth2/v2/auth?client_id=...
+
+After signing in, either:
+  • The page will confirm login automatically (if running locally)
+  • Or paste the callback URL from your browser here ↓
+
+http://localhost:9876/callback?code=4/0Aci98E-...    ← paste here
+```
 
 You only need to do this once.
 
