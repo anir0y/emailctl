@@ -59,7 +59,12 @@ emailctl.cmd --help
 emailctl login
 ```
 
-Opens your browser for Google sign-in. You only need to do this once.
+The login URL is always printed to the terminal, so it works everywhere:
+
+- **Desktop** — browser opens automatically
+- **SSH / VM / headless** — copy the URL from the terminal, open it in any browser on your local machine, and complete the Google sign-in. The callback hits `localhost:9876` which resolves back to the CLI.
+
+You only need to do this once.
 
 ### 4. Use
 
